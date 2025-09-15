@@ -5,7 +5,7 @@
   "main": "server.js",
  
   "scripts": {
-    "dev": "nodemon  backend/server.js",
+    "dev": "node backend/server.js",
     "seed-admin": "node seed.js/seedAdmin.js",
     "build": "npm install && npm install --prefix frontend && npm run build --prefix frontend",
     "start": "nodemon backend/server.js"
