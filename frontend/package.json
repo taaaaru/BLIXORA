@@ -4,7 +4,7 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "start":"nodemon",
+    "start": "nodemon",
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview"
@@ -12,6 +12,7 @@
   "dependencies": {
     "@tailwindcss/vite": "^4.1.13",
     "axios": "^1.12.1",
+    "blixora-backend": "file:..",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.30.1",
