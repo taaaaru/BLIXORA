@@ -35,7 +35,7 @@ app.get("/api", (req, res) => res.send("Blixora Labs API is running"));
 // Serve frontend (after building React app)
 app.use(express.static(path.join(__dirname, "../frontend/dist")));
 
-app.get("*", (_, res) => {
+app.get("/*", (_, res) => {
   res.sendFile(path.resolve(__dirname, "../frontend/dist", "index.html"));
 });
 
