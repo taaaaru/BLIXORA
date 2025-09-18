@@ -19,7 +19,7 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 app.use(express.json());
-app.use(cors({ origin: process.env.CLIENT_URL || "*" }));
+app.use(cors("*"));
 
 // Connect DB
 connectDB(process.env.MONGO_URI);
