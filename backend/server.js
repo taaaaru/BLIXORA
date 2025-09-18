@@ -14,7 +14,7 @@ dotenv.config();
 const app = express();
 const PORT = process.env.PORT || 5000;
 
-// Fix __dirname in ESM
+// Fix __dirname in ESMn
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
@@ -22,7 +22,7 @@ app.use(express.json());
 app.use(cors({ origin: process.env.CLIENT_URL || "*" }));
 
 // Connect DB
-connectDB(process.env.MONGO_URI || "mongodb://localhost:27017/blixora");
+connectDB(process.env.MONGO_URI);
 
 // API Routes
 app.use("/api/auth", authRoutes);
@@ -35,8 +35,8 @@ app.get("/api", (req, res) => res.send("Blixora Labs API is running"));
 // Serve frontend (after building React app)
 app.use(express.static(path.join(__dirname, "../frontend/dist")));
 
-app.get("/*", (_, res) => {
-  res.sendFile(path.resolve(__dirname, "../frontend/dist", "index.html"));
-});
+// app.get("/*", (_, res) => {
+//   res.sendFile(path.resolve(__dirname, "../frontend/dist", "index.html"));
+// });
 
 app.listen(PORT, () => console.log(`Server started on port ${PORT}`));
